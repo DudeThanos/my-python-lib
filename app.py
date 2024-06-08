@@ -3,7 +3,7 @@ from flask_cors import CORS
 import random
 
 app = Flask(__name__)
-CORS(app)  # This will enable CORS for all routes
+CORS(app)
 
 # Define the board with snakes and ladders
 snakes = {16: 6, 47: 26, 49: 11, 56: 53, 62: 19,
@@ -15,7 +15,7 @@ ladders = {1: 38, 4: 14, 9: 31, 21: 42,
 class Player:
     def __init__(self, name):
         self.name = name
-        self.position = 0
+        self.position = 1
 
     def move(self, steps):
         self.position += steps
@@ -47,6 +47,17 @@ def roll_dice():
 
 @app.route('/game_state', methods=['GET'])
 def game_state():
+    return jsonify({
+        'player_positions': [player.position for player in players],
+        'current_turn': turn
+    })
+
+
+@app.route('/restart_game', methods=['POST'])
+def restart_game():
+    global players, turn
+    players = [Player("Player 1"), Player("Player 2")]
+    turn = 0
     return jsonify({
         'player_positions': [player.position for player in players],
         'current_turn': turn

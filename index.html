@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake and Ladder</title>
+    <title>Snake and Ladder Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="game-board">
-        <h1>Snake and Ladder</h1>
-        <div id="board"></div>
-        <div class="controls">
-            <button id="rollDiceButton">Roll Dice</button>
-            <p id="diceValue">Dice Value: -</p>
-            <p id="turnInfo">Player 1's turn</p>
-        </div>
-        <div class="players">
-            <p>Player 1 Position: <span id="player1Position">0</span></p>
-            <p>Player 2 Position: <span id="player2Position">0</span></p>
-        </div>
+    <h1>Snake and Ladder Game</h1>
+    <div id="board" class="board"></div>
+    <button id="rollDiceButton">Roll Dice</button>
+    <button id="restartButton" style="display:none;">Restart Game</button>
+    <div>
+        <p>Dice Value: <span id="dice">🎲</span></p>
+        <p id="turnInfo">Player 1's turn</p>
+        <p>Player 1 Position: <span id="player1Position">1</span></p>
+        <p>Player 2 Position: <span id="player2Position">1</span></p>
     </div>
     <script src="script.js"></script>
 </body>
