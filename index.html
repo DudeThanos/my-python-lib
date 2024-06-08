@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake and Ladder Game</title>
+    <title>Snake and Ladder</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Snake and Ladder Game</h1>
-    <div id="board" class="board"></div>
-    <button id="rollDiceButton">Roll Dice</button>
-    <button id="restartButton" style="display:none;">Restart Game</button>
+    <h1>Snake & Ladder Game</h1>
+    <div class="container">
+        <div class="info">
+            <h3>Ladders</h3>
+            <ul id="laddersList"></ul>
+        </div>
+        <div id="board" class="board"></div>
+        <div class="info">
+            <h3>Snakes</h3>
+            <ul id="snakesList"></ul>
+        </div>
+    </div>
     <div>
-        <p>Dice Value: <span id="dice">🎲</span></p>
+        <button id="rollDiceButton">Roll Dice</button>
+        <button id="restartButton" style="display: none;">Restart</button>
+    </div>
+    <div>
+        <p>Dice: <span id="dice">🎲</span></p>
         <p id="turnInfo">Player 1's turn</p>
         <p>Player 1 Position: <span id="player1Position">1</span></p>
         <p>Player 2 Position: <span id="player2Position">1</span></p>
